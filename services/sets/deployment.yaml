@@ -1,0 +1,25 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+      app: nginx
+      environment: dev
+  template:
+    metadata:
+      labels:
+        tier: frontend
+        app: nginx
+        environment: dev
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
