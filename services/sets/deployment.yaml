@@ -21,5 +21,7 @@ spec:
         environment: dev
     spec:
       containers:
-      - name: nginx:latest
+      - name: nginx:1.14.2
         image: nginx
+        ports:
+        - containerPort: 80
